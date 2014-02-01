@@ -76,16 +76,13 @@
 
 	<bean id="dateFormatter" class="eu.comparegroup.util.DateFormatter"/>
 
-<!--	 import properties based on define profiles, default "prod". Use -Dspring.profiles.active="dev" to start other profiles 
+	 <!--import properties based on define profiles, default "prod". Use -Dspring.profiles.active="dev" to start other profiles--> 
 	<import resource="properties.xml"/>
 
-	 import all micro services 
+	 <!--import all micro services--> 
 	<import resource="microservices.xml"/>
 
-	 import all service implementation beans 
+	 <!--import all service implementation beans--> 
 	<import resource="services.xml"/>
-
-	 import security beans 
-	<import resource="security.xml"/>-->
 
 </beans>

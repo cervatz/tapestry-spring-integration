@@ -1,5 +1,9 @@
 package eu.comparegroup.tapestrytest.pages;
 
+import eu.comparegroup.services.common.client.WebResponseException;
+import eu.comparegroup.services.frontend.poc.dto.listerpage.SearchResultsContainer;
+import eu.comparegroup.services.listerpage.ListerPageServiceImpl;
+import java.io.IOException;
 import java.util.Date;
 import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.ioc.annotations.*;
@@ -26,9 +30,13 @@ public class Index
 
     @Inject
     private AlertManager alertManager;
+	
+	@Inject
+	private ListerPageServiceImpl listerPageService;
 
-    public Date getCurrentTime()
+    public Date getCurrentTime() throws IOException, WebResponseException
     {
+		SearchResultsContainer searchResults = listerPageService.getSearchResults(10);
         return new Date();
     }
 
