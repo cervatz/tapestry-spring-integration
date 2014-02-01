@@ -24,53 +24,53 @@
 
 	<!-- Custom Interceptor that runs each request through the security context -->
 
-	<bean id="securityInterceptor" class="eu.comparegroup.security.SecurityInterceptor"/>
+<!--	<bean id="securityInterceptor" class="eu.comparegroup.security.SecurityInterceptor"/>
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
 		<property name="interceptors">
 			<list>
 				<ref bean="securityInterceptor"/>
 			</list>
 		</property>
-	</bean>
+	</bean>-->
 
-	<bean id="ajaxAuthenticationEntryPoint" class="eu.comparegroup.security.AjaxAuthenticationEntryPoint">
+<!--	<bean id="ajaxAuthenticationEntryPoint" class="eu.comparegroup.security.AjaxAuthenticationEntryPoint">
 		<constructor-arg name="loginUrl" value="/login"/>
-	</bean>
+	</bean>-->
 
-	<bean id="httpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
+<!--	<bean id="httpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
 		<property name="supportedMediaTypes" value="text/plain;charset=UTF-8"/>
-	</bean>
+	</bean>-->
 
-	<bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+<!--	<bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 		<property name="supportedMediaTypes" value="application/json"/>
-	</bean>
+	</bean>-->
 
-	<bean id="defaultMessageConverters" class="java.util.ArrayList">
+<!--	<bean id="defaultMessageConverters" class="java.util.ArrayList">
 		<constructor-arg>
 			<list>
 				<ref bean="httpMessageConverter"/>
 				<ref bean="jsonConverter"/>
 			</list>
 		</constructor-arg>
-	</bean>
+	</bean>-->
 
-	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+<!--	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 		<property name="messageConverters" ref="defaultMessageConverters"/>
 		<property name="cacheSeconds" value="0"/>
-		<!--  NO CACHE  -->
-	</bean>
+		  NO CACHE  
+	</bean>-->
 
-	<bean id="contentNegotiatingResolver" class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-		<property name="mediaTypes">
-			<map>
-				<entry key="html" value="text/html"/>
-				<entry key="pdf" value="application/pdf"/>
-				<entry key="xsl" value="application/vnd.ms-excel"/>
-				<entry key="xml" value="application/xml"/>
-				<entry key="json" value="application/json"/>
-			</map>
-		</property>
-	</bean>
+	<!--	<bean id="contentNegotiatingResolver" class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+			<property name="mediaTypes">
+				<map>
+					<entry key="html" value="text/html"/>
+					<entry key="pdf" value="application/pdf"/>
+					<entry key="xsl" value="application/vnd.ms-excel"/>
+					<entry key="xml" value="application/xml"/>
+					<entry key="json" value="application/json"/>
+				</map>
+			</property>
+		</bean>-->
 
 	<!-- custom beans -->
 
