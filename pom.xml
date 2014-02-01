@@ -7,7 +7,6 @@
     <packaging>war</packaging>
     <name>tapestry1 Tapestry 5 Application</name>
 
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>3.2.4.RELEASE</spring.version>
@@ -90,16 +89,6 @@
             <version>${tapestry-release-version}</version>
         </dependency>
 
-        <!-- Uncomment this to add support for file uploads:
-
-         <dependency>
-            <groupId>org.apache.tapestry</groupId>
-            <artifactId>tapestry-upload</artifactId>
-            <version>${tapestry-release-version}</version>
-        </dependency>
-
-  -->
-
 		<!-- A dependency on either JUnit or TestNG is required, or the surefire plugin (which runs the tests)
 		will fail, preventing Maven from packaging the WAR. Tapestry includes a large number
 		of testing facilities designed for use with TestNG (http://testng.org/), so it's recommended. -->
@@ -109,14 +98,12 @@
 			<version>${testng-release-version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.easymock</groupId>
 			<artifactId>easymock</artifactId>
 			<version>${easymock-release-version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.apache.tapestry</groupId>
 			<artifactId>tapestry-test</artifactId>
@@ -175,6 +162,24 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
 			<version>${spring.security.version}</version>
+		</dependency>
+		<!-- dependency for resteasy -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+			<!--			<version>3.0.1.Final</version>-->
+			<version>3.0-beta-4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.tynamo</groupId>
+			<artifactId>tapestry-resteasy</artifactId>
+			<version>0.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jackson-provider</artifactId>
+			<!--			<version>3.0.1.Final</version>-->
+			<version>3.0-beta-4</version>
 		</dependency>
 	</dependencies>
 	<build>
